@@ -17,9 +17,10 @@ class Plugin extends PluginBase
     {
         return [
             'name'        => 'Podcast',
-            'description' => 'No description provided yet...',
+            'description' => 'Create and publish a podcast using the October CMS platform.',
             'author'      => 'Bubblecore',
-            'icon'        => 'icon-leaf'
+	    'homepage'	  => 'http://bubblecore.net',
+            'icon'        => 'icon-play-circle'
         ];
     }
 
