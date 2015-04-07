@@ -24,4 +24,10 @@ class Plugin extends PluginBase
         ];
     }
 
+    public function registerComponents() {
+	return [
+	    'Bubblecore\Podcast\Components\Podcast' => 'podcast'
+	];
+    }
+
 }

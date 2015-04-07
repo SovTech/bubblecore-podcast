@@ -9,7 +9,7 @@ class Podcast extends ComponentBase
     {
         return [
             'name'        => 'Podcast Component',
-            'description' => 'No description provided yet...'
+            'description' => 'Render a list of episodes.'
         ];
     }
 
