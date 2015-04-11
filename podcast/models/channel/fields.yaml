@@ -1,0 +1,126 @@
+# ===================================
+#  Channel Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+        hidden: true
+tabs:
+    stretch: true
+    fields:
+        title:
+            label: Title
+            type: text
+            comment: Title of the channel
+            tab: General
+            required: true
+            span: left
+        author:
+            label: Author
+            type: text
+            tab: General
+            comment: The channel's author
+            required: true
+            span: right
+        link:
+            label: Link
+            type: text
+            tab: General
+            comment: The link to your site
+            required: true
+            span: left
+        feedlink:
+            label: Feed Path
+            type: text
+            tab: General
+            comment: The path to your feed (relative to the link to your site)
+            required: true
+            span: right
+        coverTitle:
+            label: Cover Title
+            type: text
+            tab: Cover Image
+            comment: The title for the channel's cover image
+            span: left
+        coverLink:
+            label: Cover Link
+            type: text
+            tab: Cover Image
+            comment: The link for the channel's cover image
+        image:
+            label: Image
+            type: fileupload
+            mode: image
+            tab: Cover Image
+            comment: The channel's cover image
+            span: left
+        keywords:
+            label: Keywords
+            type: text
+            tab: Meta
+            required: true
+            span: left
+        explicit:
+            label: Explicit
+            type: switch
+            comment: Does the channel contain explicit content?
+            tab: Meta
+            default: false
+            span: right
+        category:
+            label: Category
+            type: dropdown
+            tab: Meta
+            span: left
+            placeholder: Select Category
+        subcategory:
+            label: Subcategory
+            type: dropdown
+            tab: Meta
+            span: right
+            dependsOn: category
+            placeholder: Select Subcategory
+        summary:
+            label: Summary
+            type: textarea
+            comment: A brief description of the channel and it's subject matter
+            tab: Meta
+            required: true
+            size: large
+        description:
+            label: Description
+            type: textarea
+            size: large
+            tab: Meta
+            required: true
+            comment: A verbose description of the channel and it's subject matter
+        ownerName:
+            label: Owner Name
+            type: text
+            tab: Additional Information
+            comment: The channel's owner
+            required: false
+            span: left
+        ownerEmail:
+            label: Owner Email
+            type: text
+            tab: Additional Information
+            comment: The channel owner's E-Mail
+            required: false
+            span: right
+        webMaster:
+            label: Web Master
+            type: text
+            tab: Additional Information
+            comment: The channel's web Master
+            required: false
+            span: left
+        managingEditor:
+            label: Managing Editor
+            type: text
+            tab: Additional Information
+            comment: The channel's Managing Editor
+            required: false
+            span: right

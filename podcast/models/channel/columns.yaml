@@ -1,0 +1,26 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    title:
+        label: Title
+        searchable: true
+    author:
+        label: Author
+        searchable: true
+    category_id:
+        label: Category
+        relation: category
+        select: name
+        sortable: false
+        searchable: true
+    subcategory_id:
+        label: Subcategory
+        relation: subcategory
+        select: name
+        sortable: false
+        searchable: true

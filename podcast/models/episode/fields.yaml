@@ -1,0 +1,66 @@
+# ===================================
+#  Episode Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+        hidden: true
+    title:
+        label: Title
+        type: text
+        comment: Title of the episode
+        span: left
+        required: true
+        disabled: false
+    subtitle:
+        label: Subtitle
+        type: Text
+        comment: Optional subtitle
+        span: right
+        required: false
+        disabled: false
+    duration:
+        label: Duration
+        type: Backend\FormWidgets\DatePicker
+        mode: time
+        span: left
+        comment: Duration of the episode
+        required: true
+        disabled: false
+    pubDate:
+        label: Publish Date
+        type: Backend\FormWidgets\DatePicker
+        mode: date
+        comment: Date that the episode was published
+        span: right
+        required: true
+        disabled: false
+    channel:
+        label: Channel
+        type: relation
+        nameFrom: title
+    file:
+        label: File
+        span: left
+        type: fileupload
+        mode: file
+        fileTypes: m4a,mpga,mp3,mov,mp4,m4v,pdf,epub
+        comment: The episode's file.  Can be audio, video, or document of the following types: m4a, mp3, mov, mp4, m4v, pdf, epub
+        required: true
+    explicit:
+        label: Explicit
+        type: switch
+        default: false
+        span: right
+        comment: Does the episode contain explicit content?
+        required: true
+        disabled: false
+    summary:
+        label: Summary
+        type: textarea
+        comment: A brief description of the contents of the episode
+        size: large
+        required:
+        disabled: false

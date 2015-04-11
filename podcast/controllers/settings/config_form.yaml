@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Setting
+
+# Model Form Field configuration
+form: $/bubblecore/podcast/models/setting/fields.yaml
+
+# Model Class name
+modelClass: Bubblecore\Podcast\Models\Setting
+
+# Default redirect location
+defaultRedirect: bubblecore/podcast/settings
+
+# Create page
+create:
+    title: Create Setting
+    redirect: bubblecore/podcast/settings/update/:id
+    redirectClose: bubblecore/podcast/settings
+
+# Update page
+update:
+    title: Edit Setting
+    redirect: bubblecore/podcast/settings
+    redirectClose: bubblecore/podcast/settings
+
+# Preview page
+preview:
+    title: Preview Setting

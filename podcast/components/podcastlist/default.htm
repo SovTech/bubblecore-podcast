@@ -1,0 +1,29 @@
+{% if format == 'normal' %}
+<h3>Recent {{ episodeTerm|capitalize}}s</h3>
+<hr />
+{% if episodeCount >= 1 %}
+{% for episode in episodes %}
+	<a href="{{ this.site.url }}/{{ detail }}/{{ episode.id }}">
+		<h4>
+			<small>{{ episode.pubDate|date('F j, o', tz)|upper }}</small><br />
+			<strong>{{ episode.title }}</strong>
+		</h4>
+	</a>
+	<span>{{ episode.summary }}</span>
+{% if player %}
+	<audio src="{{ channel.link }}/{{ channel.feedlink }}/{{ episode.id }}.{{ episode.file.extension }}" preload="auto" />
+{% endif %}
+{% endfor %}
+{% else %}
+	<h2>No {{ episodeTerm|capitalize}}s</h2>
+{% endif %}
+{% elseif format == 'mini' %}
+{% for episode in episodes %}
+	<a href="{{ this.site.url }}/{{ detail }}/{{ episode.id }}">
+		<h5>
+			<strong>{{ episode.title }}</strong><br />
+			<small>{{ episode.pubDate|date('F j, o', tz)|upper }}</small>
+		</h5>
+	</a>
+{% endfor %}
+{% endif %}

@@ -1,1 +1,9 @@
-1.0.1: First version of Podcast
+1.0.1: 
+    - First version of Podcast Plugin
+    - create_episodes_table.php
+    - create_channels_table.php
+    - create_settings_table.php
+    - create_categories_table.php
+    - create_subcategories_table.php
+    - create_timezones_table.php
+    - seed_all_tables.php

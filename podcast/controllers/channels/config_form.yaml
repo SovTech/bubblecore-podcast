@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Channel
+
+# Model Form Field configuration
+form: $/bubblecore/podcast/models/channel/fields.yaml
+
+# Model Class name
+modelClass: Bubblecore\Podcast\Models\Channel
+
+# Default redirect location
+defaultRedirect: bubblecore/podcast/channels
+
+# Create page
+create:
+    title: Create Channel
+    redirect: bubblecore/podcast/channels/update/:id
+    redirectClose: bubblecore/podcast/channels
+
+# Update page
+update:
+    title: Edit Channel
+    redirect: bubblecore/podcast/channels
+    redirectClose: bubblecore/podcast/channels
+
+# Preview page
+preview:
+    title: Preview Channel

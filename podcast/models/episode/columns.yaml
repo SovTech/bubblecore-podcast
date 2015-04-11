@@ -1,0 +1,32 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    title:
+        label: Title
+        searchable: true
+    subtitle:
+        label: Subtitle
+        searchable: true
+    channel_id:
+        label: Channel
+        sortable: true
+        relation: channel
+        select: title
+    duration_time:
+        label: Duration
+        sortable: true
+        select: concat(left(duration,2), ' hr ', mid(duration, 4, 2), ' min ', right(duration, 2), ' sec')
+    pubDate:
+        label: Publish Date
+        sortable: true
+        type: datetime
+        format: F j\, o
+    explicit:
+        label: Explicit
+        sortable: true
+        type: switch

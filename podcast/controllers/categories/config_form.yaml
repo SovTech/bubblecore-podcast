@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Category
+
+# Model Form Field configuration
+form: $/bubblecore/podcast/models/category/fields.yaml
+
+# Model Class name
+modelClass: Bubblecore\Podcast\Models\Category
+
+# Default redirect location
+defaultRedirect: bubblecore/podcast/categories
+
+# Create page
+create:
+    title: Create Category
+    redirect: bubblecore/podcast/categories/update/:id
+    redirectClose: bubblecore/podcast/categories
+
+# Update page
+update:
+    title: Edit Category
+    redirect: bubblecore/podcast/categories
+    redirectClose: bubblecore/podcast/categories
+
+# Preview page
+preview:
+    title: Preview Category

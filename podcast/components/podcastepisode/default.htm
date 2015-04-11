@@ -1,0 +1,9 @@
+<div class="col-sm-6">
+	<h4>From {{ channel.title }}</h4>
+	<h4><small>{{ episode.pubDate|date('F j, o', tz)|upper }}</small><br />
+	<strong>{{ episode.subtitle }}</strong></h4>
+	<p><strong>Explicit:</strong> {{ episode.explicit ? 'yes' : 'no' }}</p>
+	<p><strong>Summary:</strong> {{ episode.summary }}</p>
+	<p><strong>Description:</strong> {{ episode.description }}</p>
+</div>
+<audio src="{{ channel.link }}/{{ channel.feedlink }}/{{ episode.id }}.{{ episode.file.extension }}" preload="auto" />

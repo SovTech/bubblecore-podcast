@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+    <channel>
+        <link>{{ channel.link }}</link>
+        <language>en-us</language>
+        <copyright>&#xA9;{{ "now"|date('Y', false) }}</copyright>
+        <webMaster>{{ channel.webMaster }}</webMaster>
+        <managingEditor>{{ channel.managingEditor }}</managingEditor>
+        <image>
+            <url>{{ channel.link}}/{{ channel.image[0].getPath() }}</url>
+            <title>{{ channel.coverTitle }}</title>
+            <link>{{ channel.coverLink }}</link>
+        </image>
+        <itunes:owner>
+            <itunes:name>{{ channel.ownerName }}</itunes:name>
+            <itunes:email>{{ channel.ownerEmail }}</itunes:email>
+        </itunes:owner>
+        <itunes:category text="{{ channel.category.name }}">
+            <itunes:category text="{{ channel.subcategory.name }}" />
+        </itunes:category>
+        <itunes:keywords>{{ channel.keywords }}</itunes:keywords>
+        <itunes:explicit>{{ channel.explicit ? 'yes' : 'no' }}</itunes:explicit>
+        <itunes:image href="{{ channel.link }}{{ channel.image[0].getPath() }}" />
+        <atom:link href="{{ channel.link }}/{{ channel.feedlink }}" rel="self" type="application/rss+xml" />
+        <pubDate>{{ channel.created_at|date('r', tz) }}</pubDate>
+        <title>{{ channel.title }}</title>
+        <itunes:author>{{ channel.author }}</itunes:author>
+        <description>{{ channel.description }}</description>
+        <itunes:summary>{{ channel.summary }}</itunes:summary>
+        <itunes:subtitle>{{ channel.subtitle }}</itunes:subtitle>
+        <lastBuildDate>{{ "now"|date('r', tz) }}</lastBuildDate>
+{% for episode in episodes %}
+        <item>
+            <title>{{ episode.title }}</title>
+            <description>{{ episode.description }}</description>
+            <itunes:summary>{{ episode.summary }}</itunes:summary>
+            <itunes:subtitle>{{ episode.subtitle }}</itunes:subtitle>
+            <enclosure url="{{ channel.link }}/{{ channel.feedlink }}/{{ episode.id }}.{{ episode.file.extension }}" type="audio/mpeg" length="1" />
+            <guid>{{ channel.link }}/{{ channel.feedlink }}/{{ episode.id }}.{{ episode.file.extension }}</guid>
+            <itunes:duration>{{ episode.duration|length > 8 ? episode.duration|slice(0,8) : episode.duration }}</itunes:duration>
+            <pubDate>{{ episode.pubDate|date('r', tz) }}</pubDate>
+        </item>
+{% endfor %}
+    </channel>
+</rss>

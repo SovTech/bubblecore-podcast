@@ -20,41 +20,73 @@ class Plugin extends PluginBase
             'name'        => 'Podcast',
             'description' => 'Create and publish a podcast using the October CMS platform.',
             'author'      => 'Bubblecore',
-	    'homepage'	  => 'http://bubblecore.net',
+	    	'homepage'	  => 'http://bubblecore.net',
             'icon'        => 'icon-play-circle'
         ];
     }
 
     public function registerComponents() {
-	return [
-	    'Bubblecore\Podcast\Components\Podcast' => 'podcast'
-	];
+		return [
+		    'Bubblecore\Podcast\Components\Podcast' => 'podcast',
+		    'Bubblecore\Podcast\Components\PodcastList' => 'podcastList',
+		    'Bubblecore\Podcast\Components\PodcastEpisode' => 'podcastEpisode',
+		    'Bubblecore\Podcast\Components\Servlet' => 'servlet'
+		];
     }
 
     public function registerNavigation() {
-	return [
-	    'podcast' => [
-		'label' 	=> 'Podcast',
-		'url' 		=> Backend::url('bubblecore/podcast/episodes'),
-		'icon'		=> 'icon-play-circle',
-		'permissions'	=> ['bubblecore.podcast.*'],
-		'order'		=> 500,
-		'sideMenu' => [
-		    'episodes' 		=> [
-			'label' 	=> 'Episodes',
-			'icon'		=> 'icon-envelope-o',
-			'url' 		=> Backend::url('bubblecore/podcast/episodes'),
-			'permissions'	=> ['bubblecore.podcast.access_episodes'],
-		    ],
-		    'categories'	=> [
-			'label'		=> 'Categories',
-			'icon'		=> 'icon-copy',
-			'url'		=> Backend::url('bubblecore/podcast/categories'),
-			'permissions' 	=> ['bubblecore.podcast.access_categories'],
-		    ],
-		]
-	    ]
-	];
+		return [
+		    'podcast' => [
+				'label' 	=> 'Podcasts',
+				'url' 		=> Backend::url('bubblecore/podcast/channels'),
+				'icon'		=> 'icon-play-circle',
+				'permissions'	=> ['bubblecore.podcast.*'],
+				'order'		=> 500,
+				'sideMenu' => [
+				    'channels'	=> [
+						'label'		=> 'Channels',
+						'icon'		=> 'icon-copy',
+						'url'		=> Backend::url('bubblecore/podcast/channels'),
+						'permissions' 	=> ['bubblecore.podcast.access_channels'],
+				    ],
+				    'episodes' 		=> [
+						'label' 	=> 'Episodes',
+						'icon'		=> 'icon-envelope-o',
+						'url' 		=> Backend::url('bubblecore/podcast/episodes'),
+						'permissions'	=> ['bubblecore.podcast.access_episodes'],
+				    ],
+				]
+		    ]
+		];
      }
+
+	public function registerSettings()
+	{
+	    return [
+	        'settings' => [
+	            'label'       => 'Podcast Settings',
+	            'description' => 'Manage podcast based settings.',
+	            'category'    => 'Misc',
+	            'icon'        => 'icon-play-circle',
+	            'class'       => 'Bubblecore\Podcast\Models\Settings',
+	            'order'       => 500,
+	            'keywords'    => 'security podcast'
+	        ]
+	    ];
+	}
+
+    // /**
+	// * Register new Twig variables
+	// * @return array
+	// */
+	// public function registerMarkupTags()
+	// {
+	// 	return [
+	// 		'functions' => [
+	// 			'form_select_category' => ['Bubblecore\Podcast\Models\Category', 'formSelect'],
+	// 			'form_select_subcategory' => ['Bubblecore\Podcast\Models\Subcategory', 'formSelect'],
+	// 		]
+	// 	];
+	// }
 
 }

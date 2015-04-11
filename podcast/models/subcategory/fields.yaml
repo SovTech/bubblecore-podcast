@@ -1,0 +1,16 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+    	label: Name
+    	span: auto
+    	commentAbove: Name
+    key:
+    	label: Key
+    	span: auto
+    	commentAbove: Key
+
+
+
