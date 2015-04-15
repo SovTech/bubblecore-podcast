@@ -49,7 +49,6 @@ class Subcategory extends Model
 
     public static function getNameList($categoryId)
     {
-        \Log::info('getting names....'.$categoryId);
         if (isset(self::$nameList[$categoryId]))
             return self::$nameList[$categoryId];
 

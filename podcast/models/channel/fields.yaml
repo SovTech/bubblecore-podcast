@@ -74,6 +74,7 @@ tabs:
             type: dropdown
             tab: Meta
             span: left
+            required: true
             placeholder: Select Category
         subcategory:
             label: Subcategory
@@ -114,13 +115,13 @@ tabs:
             label: Web Master
             type: text
             tab: Additional Information
-            comment: The channel's web Master
+            comment: The channel's web Master (i.e. "mail@domain.tld <Display Name>")
             required: false
             span: left
         managingEditor:
             label: Managing Editor
             type: text
             tab: Additional Information
-            comment: The channel's Managing Editor
+            comment: The channel's Managing Editor (i.e. "mail@domain.tld <Display Name>")
             required: false
             span: right

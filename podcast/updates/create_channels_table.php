@@ -23,12 +23,11 @@ class CreateChannelsTable extends Migration
             $table->string('keywords');
             $table->text('summary');
             $table->text('description');
-            $table->string('category_id');
-            $table->string('subcategory_id');
+            $table->integer('category_id')->unsigned()->default(0);
+            $table->integer('subcategory_id')->default(0);
             $table->boolean('explicit');
             $table->string('feedlink');
             $table->string('link');
-            // $table->integer('channel_id');
             $table->timestamps();
         });
     }

@@ -7,17 +7,27 @@ use Model;
  */
 class Channel extends Model
 {
-
+    use \October\Rain\Database\Traits\Validation;
     /**
      * @var string The database table used by the model.
      */
     public $table = 'bubblecore_podcast_channels';
 
+    public $customMessages = [ 'required_if' => 'The :attribute field is required when the :other is :display.'];
+
     public $rules = [
         'title' => 'required|between:3,64',
         'author' => 'required|between:3,64',
-        'category' => 'required',
-        'summary' => 'required'
+        'link' => 'required|url',
+        'feedlink' => 'required|alpha_dash',
+        'coverLink' => 'url',
+        'keywords' => 'required',
+        'category' => 'required|exists:bubblecore_podcast_categories,id',
+        'category_id' => 'required|exists:bubblecore_podcast_categories,id',
+        'subcategory_id' => 'required_if:category,1,2,4,5,6,7,11,12,13,14,15',
+        'summary' => 'required',
+        'description' => 'required',
+        'ownerEmail' => 'email'
     ];
 
     /**
@@ -67,6 +77,22 @@ class Channel extends Model
     public $attachMany = [
         'image' => ['System\Models\File', 'order' => 'sort_order'],
     ];
+
+    public function beforeValidate()
+    {
+        $this->customMessages['required_if'] = str_replace(':display', $this->category->name, $this->customMessages['required_if']);
+
+    }
+    public function afterValidate()
+    {
+        \Log::info($this->customMessages);
+    }
+
+    public function beforeSave()
+    {
+        if ($this->subcategory_id == null | $this->subcategory_id == '')
+            $this->subcategory_id = 0;
+    }
 
     public function getCategoryOptions()
     {
