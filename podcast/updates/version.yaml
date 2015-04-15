@@ -7,3 +7,5 @@
     - create_subcategories_table.php
     - create_timezones_table.php
     - seed_all_tables.php
+1.0.2:
+    - Fixed validation issues and SQL errors

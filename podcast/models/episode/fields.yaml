@@ -55,12 +55,11 @@ fields:
         default: false
         span: right
         comment: Does the episode contain explicit content?
-        required: true
         disabled: false
     summary:
         label: Summary
         type: textarea
         comment: A brief description of the contents of the episode
         size: large
-        required:
+        required: true
         disabled: false

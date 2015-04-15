@@ -8,7 +8,7 @@ use Model;
 class Episode extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
+
     /**
      * @var string The database table used by the model.
      */
@@ -19,13 +19,13 @@ class Episode extends Model
      */
     protected $guarded = ['*'];
     public $rules = [
-        'title' => 'required|between,3,64',
-        'duration' => 'required|regex:([0-9]{2}\:){5}',
+        'title' => 'required|between:3,64',
+        'duration' => ['required','regex:/[0-9]+\:[0-5][0-9](\:[0-5][0-9])?/'],
         'pubDate' => 'required|date',
         'explicit' => 'boolean',
-        'summary' => 'required|between,3,1024',
-        'channel' => 'required|exists:bubblecore_podcast_channels,title',
-        'file' => 'required|mimes:m4a,mp3,mov,mp4,m4v,pdf,epub'
+        'summary' => 'required|between:3,1024',
+        'channel' => 'required|exists:bubblecore_podcast_channels,id',
+        'file' => 'required'
     ];
 
     protected $dates = ['pubDate'];
