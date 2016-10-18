@@ -35,8 +35,8 @@
             <description>{{ episode.description }}</description>
             <itunes:summary>{{ episode.summary }}</itunes:summary>
             <itunes:subtitle>{{ episode.subtitle }}</itunes:subtitle>
-            <enclosure url="{{ channel.link }}/{{ channel.feedlink }}/{{ episode.id }}.{{ episode.file.extension }}" type="audio/mpeg" length="1" />
-            <guid>{{ channel.link }}/{{ channel.feedlink }}/{{ episode.id }}.{{ episode.file.extension }}</guid>
+            <enclosure url="{{ channel.link }}{{ episode.file.path }}" type="audio/mpeg" length="1" />
+            <guid>{{ channel.link }}{{ episode.file.path }}</guid>
             <itunes:duration>{{ episode.duration|length > 8 ? episode.duration|slice(0,8) : episode.duration }}</itunes:duration>
             <pubDate>{{ episode.pubDate|date('r', tz) }}</pubDate>
         </item>

@@ -11,7 +11,7 @@
 	</a>
 	<span>{{ episode.summary }}</span>
 {% if player %}
-	<audio src="{{ channel.link }}/{{ channel.feedlink }}/{{ episode.id }}.{{ episode.file.extension }}" preload="auto" />
+	<audio src="{{ channel.link }}{{ episode.file.path }}" preload="auto" />
 {% endif %}
 {% endfor %}
 {% else %}

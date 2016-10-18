@@ -6,4 +6,4 @@
 	<p><strong>Summary:</strong> {{ episode.summary }}</p>
 	<p><strong>Description:</strong> {{ episode.description }}</p>
 </div>
-<audio src="{{ channel.link }}/{{ channel.feedlink }}/{{ episode.id }}.{{ episode.file.extension }}" preload="auto" />
+<audio src="{{ channel.link }}{{ episode.file.path }}" preload="auto" />
