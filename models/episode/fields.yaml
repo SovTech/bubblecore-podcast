@@ -47,7 +47,7 @@ fields:
         type: fileupload
         mode: file
         fileTypes: m4a,mpga,mp3,mov,mp4,m4v,pdf,epub
-        comment: The episode's file.  Can be audio, video, or document of the following types: m4a, mp3, mov, mp4, m4v, pdf, epub
+        comment: The episode's file can be audio, video, or a document of the following types m4a, mp3, mov, mp4, m4v, pdf, epub
         required: true
     explicit:
         label: Explicit
