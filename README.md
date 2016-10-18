@@ -1,8 +1,8 @@
-# Bubblecore Podcast
+# Bubblecore Podcast ![podcast](https://octobercms.com/storage/app/uploads/public/552/8b7/29c/thumb_2084_64x64_0_0_auto.png)
 
 *This project is a revival of the awesome [Bubblecore Podcast Plugin](https://gitlab.com/bubblecore-systems/oc-podcast-plugin) for [OctoberCMS](http://octobercms.com/).*
 
-A huge thanks to the folks over at http://bubblecore.net/ for their work on this. The project has been stagnant for about 2 years on GitLab and we decided to give a new breath of life and fix a bug or two.
+A huge thanks to the folks over at http://bubblecore.net/ for their work on this. The project has been stagnant for about 2 years on GitLab and we decided to give it a new breath of life and fix a bug or two.
 
 ## Introduction
 
@@ -19,7 +19,7 @@ The Podcast plugin allows you to create multiple podcast channels and add them v
 ## Installation
 
 Navigate to whichever directory your OctoberCMS installation resides & enter the `plugins` subdirectory.
-For the sake of this guide, our lives over at `/var/www/html/plugins`.
+For the sake of this guide, ours lives over at `/var/www/html/plugins`.
 
 ```bash
 cd /var/www/html/plugins
@@ -42,14 +42,14 @@ php artisan plugin:refresh bubblecore.podcast
 ## Usage
 
 ### Adding a channel to your website
-1. Create a channel using the Podcast menu in the backend. Fill in as much information as possible.
+* Create a channel using the Podcast menu in the backend. Fill in as much information as possible.
 
-2. Create a new page with no layout. Add the Podcast component to it, selecting the appropriate channel and customizing the component's options as necessary. Enter the component tag in the page to render the component. This will publish the actual RSS feed for the podcast.
+* Create a new page with no layout. Add the Podcast component to it, selecting the appropriate channel and customizing the component's options as necessary. Enter the component tag in the page to render the component. This will publish the actual RSS feed for the podcast.
 ```
 {% component 'podcast' %}
 ```
 
-3. Create a new page with the desired layout. Add the Podcast List component to it, selecting the appropriate channel and customizing the component's options as necessary. Enter the component tag in the page to render the component. This will publish a listing of the channel's episodes wrapped inside the chosen layout.
+* Create a new page with the desired layout. Add the Podcast List component to it, selecting the appropriate channel and customizing the component's options as necessary. Enter the component tag in the page to render the component. This will publish a listing of the channel's episodes wrapped inside the chosen layout.
 ```
 <!-- Additional page HTML -->
 ...
@@ -57,7 +57,7 @@ php artisan plugin:refresh bubblecore.podcast
 ...
 ```
 
-4. Create a new page with the desired layout. Add the Podcast Episode component to it. Enter the component tag in the page to render the component. This will define the layout which a single episode should be displayed within.
+* Create a new page with the desired layout. Add the Podcast Episode component to it. Enter the component tag in the page to render the component. This will define the layout which a single episode should be displayed within.
 ```
 <!-- Additional page HTML -->
 ...
