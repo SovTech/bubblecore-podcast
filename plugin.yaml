@@ -1,0 +1,20 @@
+plugin:
+    name: 'bubblecore.podcast::lang.plugin.name'
+    description: 'bubblecore.podcast::lang.plugin.description'
+    author: Sovtech
+    icon: icon-play-circle
+    homepage: ''
+navigation:
+    podcast:
+        label: Podcasts
+        url: bubblecore/podcast/channels
+        icon: icon-play-circle
+        sideMenu:
+            channels:
+                label: Channels
+                url: bubblecore/podcast/channels
+                icon: icon-copy
+            episodes:
+                label: Episodes
+                url: bubblecore/podcast/episodes
+                icon: icon-envelope-o
