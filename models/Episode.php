@@ -52,4 +52,10 @@ class Episode extends Model
     ];
     public $attachMany = [];
 
+    public function beforeValidate() {
+      if (!empty($this->duration)){
+        $this->duration = substr($this->duration,-8,8);
+      }
+    }
+
 }
