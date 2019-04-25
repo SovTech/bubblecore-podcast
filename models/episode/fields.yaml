@@ -60,6 +60,13 @@ fields:
         label: Summary
         type: textarea
         comment: A brief description of the contents of the episode
+        size: small
+        required: true
+        disabled: false
+    description:
+        label: Description
+        type: textarea
+        comment: The full description of the contents of the episode
         size: large
         required: true
         disabled: false

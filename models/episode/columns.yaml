@@ -20,7 +20,8 @@ columns:
     duration_time:
         label: Duration
         sortable: true
-        select: concat(left(duration,2), ' hr ', mid(duration, 4, 2), ' min ', right(duration, 2), ' sec')
+        #select: concat(SUBSTRING(duration from 0 for 2), ' hr ', SUBSTRING(duration from 4 for 2), ' min ', SUBSTRING(duration from -2 for 2), ' sec')
+        select: duration
     pubDate:
         label: Publish Date
         sortable: true
